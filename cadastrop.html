@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cadastroproduto.css">
+    <title>Aside Solar - Produtos</title>
+</head>
+<body>
+    <div class="container">
+      <aside class="sidebar">
+         <div>
+            <header class="sidebar-header">
+                <div class="logo-elemento">
+                    <img class="logo-solar" src="./imgs.1/SOLAR-LOGO.png" alt="">
+                    <img class="line"  src="./imgs.1/Line 7.png 7.png" alt="">
+                </div>
+            </header>
+            <nav class="botao-cima">
+                <button onclick="window.location.href='./'">
+                    <span>
+                        <span>DASHBOARD</span>
+                    </span>
+                </button>
+                <button onclick="window.location.href='./'">
+                    <span>
+                        <span>CLIENTES</span>
+                    </span>
+                </button>
+                <button onclick="window.location.href='./'">
+                    <span>
+                        <span>PRODUTOS</span>
+                    </span>
+                </button>
+                <button onclick="window.location.href='./'">
+                    <span>
+                        <span>PROMOÇÕES</span>
+                    </span>
+                </button>
+                <button onclick="window.location.href='./'">
+                    <span>
+                        <span>RELATÓRIO</span>
+                    </span>
+                </button>
+            </nav>
+    </div>
+        <div id="cor">
+            <div class="nav-baixa">
+                <nav class="botao-fundo">
+                    <button>
+                        <span>SAIR</span>
+                    </button>
+                    <button>
+                        <span>
+                            <span>MEU PERFIL</span>
+                        </span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </aside>
+    <main>
+
+        
+
+
+
+        <div class="conteiner-tabela">
+           
+    <div class="conteinerCadastroProdutos">
+                <h1>Produtos Selecionados</h1>
+
+    <!-- Tabela para exibição dos produtos -->
+    <table id="tabela-produtos">
+        <thead>
+            <tr>
+                
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Ações</th>
+                <th>Img</th>
+            </tr>
+        </thead>
+        <tbody id="lista-produtos">
+            <!-- Lista de produtos será exibida aqui -->
+        </tbody>
+    </table>
+
+    <button id="gerenciar-produtos-btn">Gerenciar Produtos</button>
+
+    <!-- Modal de gerenciamento de produtos (popup dentro da página) -->
+    <div id="modal-gerenciar-produtos" class="modal">
+        <div class="modal-conteudo">
+            <div class="modal-header">
+                <img  id="logo-cliente" src="./imgs.1/Cliente-Solar.png" alt="">
+                <button id="fechar-modal-gerenciar-produtos"> <img src="../imgs.1/excluir.png" alt=""></button>
+            </div>
+            <h2>Gerenciar Produtos</h2>
+            
+            
+            <h3>Selecione um Produto</h3>
+            <div id="imagens-produto">
+
+                <img src="./imgs.1/cocacolaGarrafaSaborOriginal200ml.jpg" alt="Coca Cola Original" class="imagem-produto" data-nome="Coca Cola Garrafa" data-descricao="Garrafa Coca Cola" data-categoria="Garrafa">
+                <img src="./imgs.1/fantaLataSaborOriginal350ml.jpg" alt="Fanta" class="imagem-produto" data-nome="Fanta" data-descricao="Lata 350ml" data-categoria="Lata 350ml">
+                <img src="./imgs.1/JesusLataOriginal350ml.jpg" alt="Jesus Original" class="imagem-produto" data-nome="Jesus Original" data-descricao="Lata 350ml" data-categoria="Lata 350ml" >
+                <img src="./imgs.1/KuatLataOriginal350ml.jpg" alt="Coca Cola Original" class="imagem-produto" data-nome="Coca Cola Garrafa" data-descricao="Garrafa Coca Cola" data-categoria="Garrafa">
+                <img src="./imgs.1/cocacolaGarrafaSaborOriginal200ml.jpg" alt="Coca Cola Original" class="imagem-produto" data-nome="Coca Cola Garrafa" data-descricao="Garrafa Coca Cola" data-categoria="Garrafa">
+                <img src="./imgs.1/spriteLataSemAcucar350ml.jpg" alt="Coca Cola Original" class="imagem-produto" data-nome="Coca Cola Garrafa" data-descricao="Garrafa Coca Cola" data-categoria="Garrafa">
+                <img src="./imgs.1/SpritLataSaborOriginal350ml.jpg" alt="Coca Cola Original" class="imagem-produto" data-nome="Sprite" data-descricao="Sprit" data-categoria="lata 350ml">
+                <img src="./imgs.1/cocacolaLataSaborOriginal350ml.jpg" alt="Coca Cola Original" class="imagem-produto" data-nome="Coca Cola 250ml" data-descricao="Garrafa Coca Cola" data-categoria="Garrafa">
+                <img src="./imgs.1/cocacolaLataSaborOriginal350ml.jpg" alt="Coca Cola Original" class="imagem-produto" data-nome="Coca Cola lata 350ml" data-descricao=" Coca Cola" data-categoria="Garrafa">
+
+            </div>
+            <div class="listaProdutos">
+                <h3>Lista de Produtos</h3>
+            <ul id="lista-produtos-modal">
+                <!-- A lista de produtos será gerada aqui -->
+                <button id="fechar-modal-gerenciar-produtos">Fechar</button>
+            </ul>
+            </div>
+
+    </div>
+</div>
+    
+    <div class="botao-cabecalho">     
+        <button class="open-modal"> <img src="./imgs.1/adicionar.png" alt="">
+            <span class="novoProduto">Cadastrar Produto</span></button>
+    </div>
+    
+    <!-- Modal de edição de produtos -->
+
+    <div id="modal-editar-produto" class="modal">
+        <div class="modal-conteudo">
+            <h2>Adicionar ou Editar Produto</h2>
+            <form id="form-editar">
+                <label for="codigo-produto">Código do Produto:</label>
+                <input type="text" id="codigo-produto" name="codigo" readonly><br><br>
+                <label for="editar-nome">Nome:</label>
+                <input type="text" id="editar-nome" name="nome"><br><br>
+                <label for="editar-descricao">Descrição:</label>
+                <input type="text" id="editar-descricao" name="descricao"><br><br>
+                <label for="editar-categoria">Categoria:</label>
+                <input type="text" id="editar-categoria" name="categoria"><br><br>
+                <label for="editar-imagem">Imagem:</label>
+                <input type="file" id="editar-imagem" name="imagem"><br><br>
+
+                <button type="submit" id="salvar-produto-editado">Salvar/Voltar</button>
+                <button id="fechar-modal-gerenciar-produtos">Fechar</button>
+                
+            </form>
+        </div>
+    </div>
+    <div>
+
+        <button id="gerenciar-produtos-btn">Gerenciar Produtos</button>
+        <button><a id="gerar-excel-btn">Relatório Excel </a></button><!-- Botão para gerar Excel -->
+        <button id="gerar-pdf-btn">Relatório PDF</button> <!-- Botão para gerar PDF -->
+    </div>
+        
+</div>
+    <!-- Incluindo bibliotecas jsPDF e SheetJS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+    <script src="cadrastro.js"></script>
+
+</body>
+</html>
